@@ -30,8 +30,14 @@ def extract_features(img_path,model):
 
 filenames = []
 
-for file in os.listdir('images'):
-    filenames.append(os.path.join('images',file))
+image_folder = r"C:\Users\syaki\OneDrive\Desktop\fyp\archive (23)\images"
+
+if not os.path.exists(image_folder):
+    raise FileNotFoundError(f"Image folder not found: {image_folder}")
+
+for file in os.listdir(image_folder):
+    filenames.append(os.path.join(image_folder, file))
+
 
 feature_list = []
 
